@@ -13,6 +13,11 @@ public class creation_traversing {
         n2.next = n3;
         n3.next = n4;
         n4.next = null;
+        insert(50,head,5);
+        insert(60,head,6);
+        insert(70,head,7);
+        insert(80,head,8);
+        insert(90,head,9);
 
         printll(head);
     }
@@ -24,7 +29,27 @@ public class creation_traversing {
             temp = temp.next;
         }
     }
-    public static class node {
+
+    static void insert(int data, node head, int pos) {
+        node toadd = new node(data);
+        if (pos == 0 ){
+            toadd.next = head;
+            head = toadd;
+            return;
+        }
+
+        node prev = head;
+        for(int i = 1; i < pos-1; i++) {
+            prev = prev.next;
+        }
+        toadd.next = prev.next;
+        prev.next = toadd;
+    }
+
+    static void delet(node head, int position) {
+
+    }
+    static class node {
         int data;
         node next;
         node( int data ){
