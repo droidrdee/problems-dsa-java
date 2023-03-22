@@ -1,2 +1,7 @@
-package TREE;public class binaryTree {
+package TREE;
+
+public class binaryTree {
+    public static void main(String[] args) {
+
+    }
 }
