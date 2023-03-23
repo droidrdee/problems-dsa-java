@@ -1,5 +1,5 @@
 package linked_list;
-import static linked_list.creation_traversing.*;
+import static linked_list.complete_ll.*;
 public class reverse_ll {
     public static void main(String[] args) {
 
@@ -16,4 +16,8 @@ public class reverse_ll {
         }
         return prev;
     }
+
+
+
+
 }

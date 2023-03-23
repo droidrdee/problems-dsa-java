@@ -1,9 +1,12 @@
 package linked_list;
 import java.util.Scanner;
 
-//import static linked_list.reverse_ll.*;
+import static linked_list.reverse_ll.*;
+import static linked_list.insert.*;
+import static linked_list.delete.*;
 
-public class creation_traversing {
+
+public class complete_ll {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         node n1 = new node(10);
@@ -28,52 +31,19 @@ public class creation_traversing {
         System.out.println("enter position of element you want to delete : ");
         int pos = sc.nextInt();
 
-        delet(head, pos);
-        printll(head);
-
-
+        delete(head, pos);
         printll(head);
         System.out.println();
 
         node rev = reverseIteration(head);
-
         printll(rev);
     }
-
     static void printll(node head) {
         node temp = head;
         while(temp != null) {
             System.out.print(temp.data + "  ");
             temp = temp.next;
         }
-    }
-
-    static void insert(int data, node head, int pos) {
-        node toadd = new node(data);
-        if (pos == 0 ){
-            toadd.next = head;
-            head = toadd;
-            return;
-        }
-
-        node prev = head;
-        for(int i = 1; i < pos-1; i++) {
-            prev = prev.next;
-        }
-        toadd.next = prev.next;
-        prev.next = toadd;
-    }
-
-    static void delet(node head, int position) {
-        if (position == 0) {
-            head = head.next;
-            return;
-        }
-        node prev = head;
-        for(int i = 1; i < position - 1; i++) {
-            prev = prev.next;
-        }
-        prev.next = prev.next.next;
     }
     static class node {
         int data;
@@ -83,19 +53,4 @@ public class creation_traversing {
         }
     }
 
-
-
-
-    public static node reverseIteration(node head) {
-        node curr = head;
-        node prev = null;
-
-        while (curr != null) {
-            node temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = temp;
-        }
-        return prev;
-    }
 }
