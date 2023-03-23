@@ -1,8 +1,10 @@
 package TREE;
 import java.util.Scanner;
 
-import static TREE.heightOfBT.height;
+import static TREE.height_size.*;
+import static TREE.level_order_traversal.printCurrLevel;
 import static TREE.traversal.*;
+import static TREE.level_order_traversal.*;
 
 public class binaryTreeCreation {
     static Scanner sc = new Scanner(System.in);
@@ -17,6 +19,18 @@ public class binaryTreeCreation {
 
         int h = height(root);
         System.out.println("Height of tree is : "+h);
+
+        int size = size(root);
+        System.out.println("Size of tree is : "+size);
+
+        // for level order traversal
+
+        for (int i = 0; i < h; i++) {
+            printCurrLevel(root, i);
+        }
+        System.out.println();
+
+        printLevelOrderQueue(root);
     }
 
 
