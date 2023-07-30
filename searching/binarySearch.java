@@ -15,17 +15,17 @@ public class binarySearch {
 
         int mid = s + (e - s)/2;
 
-        while(s < e) {
+        while(s <= e) {
             mid = s + (e-s)/2;
 
             if(arr[mid] == t) {
                 return mid;
             }
             else if(arr[mid] > t) {
-                s = mid + 1;
+                e = mid - 1;
             }
             else {
-                e = mid -1;
+                s = mid + 1;
             }
         }
         return -1;
